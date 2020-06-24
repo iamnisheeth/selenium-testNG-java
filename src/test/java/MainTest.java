@@ -24,16 +24,16 @@ public class MainTest {
         driver = new ChromeDriver();
     }
 
-    @Test(priority = 1)
+    @Test(priority = 1, groups ="sanity, smoke", suiteName = "Web")
     public void loginToSite() {
         log.debug("Go to DDG site");
         driver.get("https://duckduckgo.com/");
     }
-    @Test(priority = 2)
+    @Test(priority = 2, groups ="sanity",suiteName = "Web")
     public void searchForVideo() throws InterruptedException {
         log.debug("key-in the search keyword(s)");
         WebElement searchBox = driver.findElement(By.xpath("//input[@id='search_form_input_homepage']"));
-        searchBox.sendKeys("iamnisheeth");
+        searchBox.sendKeys("nisheeth");
         searchBox.sendKeys(Keys.ENTER);
         Thread.sleep(5000);
     }
